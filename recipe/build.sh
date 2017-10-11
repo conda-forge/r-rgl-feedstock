@@ -1,2 +1,3 @@
 #!/bin/bash
-$R CMD INSTALL --build .
+DISPLAY=:0 \
+  $R CMD INSTALL --build . --configure-args="--disable-ftgl"
