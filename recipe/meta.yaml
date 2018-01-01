@@ -22,6 +22,7 @@ build:
   # If this is a new build for the same version, increment the build number.
   number: 0
 
+
   # This is required to make R link correctly on Linux.
   rpaths:
     - lib/R/lib/
@@ -30,7 +31,6 @@ build:
 # Suggests: MASS, rmarkdown, deldir, orientlib, lattice, misc3d, rstudioapi, magick
 requirements:
   build:
-    - r-base
     - {{ compiler('c') }}        # [not win]
     - {{ compiler('cxx') }}      # [not win]
     - {{native}}toolchain        # [win]
@@ -42,6 +42,9 @@ requirements:
     - {{posix}}automake          # [not win]
     - {{posix}}pkg-config
     - {{posix}}make
+
+  host:
+    - r-base
     - r-htmltools
     - r-htmlwidgets
     - r-jsonlite >=0.9.20
