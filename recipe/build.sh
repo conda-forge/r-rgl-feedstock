@@ -16,6 +16,7 @@ if [[ ${HOST} =~ .*darwin.* ]]; then
     exit 1
   fi
   X11_CONFIGURE_ARGS="--x-includes=${CONDA_BUILD_SYSROOT}/opt/X11/include --x-libraries=${CONDA_BUILD_SYSROOT}/opt/X11/lib"
+  export DYLD_FALLBACK_LIBRARY_PATH=${CONDA_BUILD_SYSROOT}/opt/X11/lib
 fi
 
 DISPLAY=:0 \
