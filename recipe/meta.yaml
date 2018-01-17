@@ -74,6 +74,8 @@ requirements:
     - r-shiny
     - expat                              # [linux]
     - libglu                             # [linux]
+    - libpng                             # [not win]
+    - {{native}}libpng                   # [win]
 
   run:
     - r-base
@@ -86,6 +88,7 @@ requirements:
     - r-shiny
     - expat                              # [linux]
     - libglu                             # [linux]
+    - {{native}}libpng                   # [win]
 
 test:
   commands:
