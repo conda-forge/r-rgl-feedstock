@@ -28,6 +28,8 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
+  script_env:
+    - DISPLAY
 
 # Suggests: MASS, rmarkdown, deldir, orientlib, lattice, misc3d, rstudioapi, magick
 requirements:

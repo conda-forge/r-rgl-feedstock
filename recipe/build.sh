@@ -19,5 +19,5 @@ if [[ ${HOST} =~ .*darwin.* ]]; then
   export DYLD_FALLBACK_LIBRARY_PATH=${CONDA_BUILD_SYSROOT}/opt/X11/lib
 fi
 
-DISPLAY=:0 \
+DISPLAY=${DISPLAY:-:0} \
   $R CMD INSTALL --build . --configure-args="--disable-ftgl ${X11_CONFIGURE_ARGS}"
