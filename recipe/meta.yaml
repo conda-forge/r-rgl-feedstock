@@ -16,8 +16,8 @@ source:
 
 build:
   number: 0
-  # libglu and/or X-server not available for windows and osx
-  skip: true  # [win or osx]
+  # X-server not available for osx
+  skip: true  # [win32 or osx]
   rpaths:
     - lib/R/lib/
     - lib/
@@ -66,5 +66,8 @@ about:
 
 extra:
   recipe-maintainers:
+    - cbrueffer
     - johanneskoester
     - bgruening
+    - daler
+    - jdblischak
