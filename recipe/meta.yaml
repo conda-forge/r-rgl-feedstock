@@ -28,6 +28,10 @@ build:
     - lib/
   script_env:
     - DISPLAY
+  missing_dso_whitelist:           # [osx]
+    - /opt/X11/lib/libGL.1.dylib   # [osx]
+    - /opt/X11/lib/libX11.6.dylib  # [osx]
+
 # Suggests: MASS, rmarkdown, deldir, orientlib, lattice, misc3d, rstudioapi, magick
 requirements:
   build:
