@@ -15,7 +15,8 @@ source:
   sha256: b5bdc24ba7f86b940158ad72ac9069e7b80067f103493fc916a6af3a007e64e7
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   # X-server not available for osx
   skip: true  # [win32 or osx]
   rpaths:
@@ -24,6 +25,12 @@ build:
 
 requirements:
   build:
+    - posix                # [win]
+    - {{ compiler('c') }}        # [unix]
+    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ compiler('cxx') }}        # [unix]
+    - {{ compiler('m2w64_cxx') }}  # [win]
+  host:
     - r-base
     - r-htmltools
     - r-htmlwidgets
@@ -32,9 +39,6 @@ requirements:
     - r-magrittr
     - r-shiny
     - r-crosstalk
-    - posix                # [win]
-    - {{native}}toolchain  # [win]
-    - gcc                  # [not win]
     - libglu               # [linux]
 
   run:
@@ -46,7 +50,6 @@ requirements:
     - r-knitr
     - r-magrittr
     - r-shiny
-    - libgcc  # [not win]
     - libglu  # [linux]
 
 test:

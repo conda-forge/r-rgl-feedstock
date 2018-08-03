@@ -14,14 +14,16 @@ Summary: Provides medium to high level functions for 3D interactive graphics, in
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/r-rgl-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/r-rgl-feedstock)
-OSX: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/r-rgl-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/r-rgl-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-rgl-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-rgl-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-rgl-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-rgl-feedstock/branch/master)
+![OSX disabled](https://img.shields.io/badge/OSX-disabled-lightgrey.svg)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-rgl/badges/version.svg)](https://anaconda.org/conda-forge/r-rgl)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-rgl/badges/downloads.svg)](https://anaconda.org/conda-forge/r-rgl)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-r--rgl-green.svg)](https://anaconda.org/conda-forge/r-rgl) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/r-rgl.svg)](https://anaconda.org/conda-forge/r-rgl) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/r-rgl.svg)](https://anaconda.org/conda-forge/r-rgl) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/r-rgl.svg)](https://anaconda.org/conda-forge/r-rgl) |
 
 Installing r-rgl
 ================
