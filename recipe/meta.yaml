@@ -67,6 +67,9 @@ requirements:
     - {{ cdt('libxdamage') }}            # [linux]
     - {{ cdt('libxfixes') }}             # [linux]
     - {{ cdt('libxxf86vm') }}            # [linux]
+    - {{ cdt('libxcb') }}                # [linux]
+    - {{ cdt('expat') }}                 # [linux]
+
 
   host:
     - r-base
@@ -79,7 +82,7 @@ requirements:
     - r-manipulatewidget >=0.9.0
     - r-shiny
     - expat                              # [linux]
-    - freetype                           # [not win]
+    - freetype                           # [osx]
     - libglu                             # [linux]
     - libpng                             # [not win]
     - {{native}}libpng                   # [win]
