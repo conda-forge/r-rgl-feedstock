@@ -16,7 +16,7 @@ source:
 
 build:
   merge_build_host: True  # [win]
-  number: 1
+  number: 2
   # X-server not available for osx
   skip: true  # [win32 or osx]
   rpaths:
@@ -69,6 +69,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - dpryan79
     - cbrueffer
     - johanneskoester
     - bgruening
