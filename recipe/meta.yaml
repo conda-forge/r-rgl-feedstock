@@ -1,4 +1,4 @@
-{% set version = "0.99.9" %}
+{% set version = '0.99.16' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -10,51 +10,61 @@ package:
 source:
   fn: rgl_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/rgl_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/rgl/rgl_{{ version }}.tar.gz
-  sha256: b5bdc24ba7f86b940158ad72ac9069e7b80067f103493fc916a6af3a007e64e7
+    - {{ cran_mirror }}/src/contrib/rgl_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/rgl/rgl_{{ version }}.tar.gz
+  sha256: 692a545ed2ff0f5e15289338736f0e3c092667574c43ac358d8004901d7a1a61
 
 build:
   merge_build_host: True  # [win]
-  number: 2
-  # X-server not available for osx
-  skip: true  # [win32 or osx]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
+# Suggests: MASS, rmarkdown, deldir, orientlib, lattice, misc3d, rstudioapi, magick
 requirements:
   build:
-    - posix                # [win]
-    - {{ compiler('c') }}        # [unix]
-    - {{ compiler('m2w64_c') }}  # [win]
-    - {{ compiler('cxx') }}        # [unix]
-    - {{ compiler('m2w64_cxx') }}  # [win]
+    - {{ compiler('c') }}        # [not win]
+    - {{ compiler('cxx') }}      # [not win]
+    - {{native}}toolchain        # [win]
+    - {{posix}}filesystem        # [win]
+    - {{posix}}sed               # [win]
+    - {{posix}}grep              # [win]
+    - {{posix}}autoconf
+    - {{posix}}automake          # [not win]
+    - {{posix}}automake-wrapper  # [win]
+    - {{posix}}pkg-config
+    - {{posix}}make
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
+
   host:
     - r-base
+    - r-crosstalk
     - r-htmltools
     - r-htmlwidgets
     - r-jsonlite >=0.9.20
     - r-knitr
     - r-magrittr
+    - r-manipulatewidget >=0.9.0
     - r-shiny
-    - r-crosstalk
-    - libglu               # [linux]
-
+    - libglu                     # [not win]
   run:
     - r-base
+    - {{native}}gcc-libs         # [win]
+    - r-crosstalk
     - r-htmltools
     - r-htmlwidgets
-    - r-crosstalk
     - r-jsonlite >=0.9.20
     - r-knitr
     - r-magrittr
+    - r-manipulatewidget >=0.9.0
     - r-shiny
-    - libglu  # [linux]
+    - libglu                     # [not win]
 
 test:
   commands:
-    - $R -e "library('rgl')"  # [not win]
+    - $R -e "library('rgl')"           # [not win]
     - "\"%R%\" -e \"library('rgl')\""  # [win]
 
 about:
