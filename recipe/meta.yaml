@@ -1,5 +1,4 @@
 {% set version = '0.99.16' %}
-
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -18,11 +17,8 @@ source:
 
 build:
   merge_build_host: True  # [win]
-  # If this is a new build for the same version, increment the build number.
   number: 0
   skip: True              # [osx]
-
-  # This is required to make R link correctly on Linux.
   rpaths:
     - lib/R/lib/
     - lib/
@@ -32,7 +28,6 @@ build:
     - /opt/X11/lib/libGL.1.dylib   # [osx]
     - /opt/X11/lib/libX11.6.dylib  # [osx]
 
-# Suggests: MASS, rmarkdown, deldir, orientlib, lattice, misc3d, rstudioapi, magick
 requirements:
   build:
     - {{ compiler('c') }}        # [not win]
@@ -87,7 +82,6 @@ requirements:
     - libglu                             # [linux]
     - libpng                             # [not win]
     - {{native}}libpng                   # [win]
-
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
@@ -105,15 +99,8 @@ requirements:
 
 test:
   commands:
-    # You can put additional test commands to be run here.
     - $R -e "library('rgl')"           # [linux]
     - "\"%R%\" -e \"library('rgl')\""  # [win]
-
-  # You can also put a file called run_test.py, run_test.sh, or run_test.bat
-  # in the recipe that will be run at test time.
-
-  # requires:
-    # Put any additional test requirements here.
 
 about:
   home: https://r-forge.r-project.org/projects/rgl/
@@ -124,18 +111,12 @@ about:
     using OpenGL, or to various standard 3D file formats including WebGL, PLY, OBJ,
     STL as well as 2D image formats, including PNG, Postscript, SVG, PGF.
   license_family: GPL
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
 extra:
   recipe-maintainers:
-    - dpryan79
-    - cbrueffer
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
+    - conda-forge/r
     - mingwandroid
-
-# The original CRAN metadata for this package was:
 
 # Package: rgl
 # Version: 0.99.16
@@ -155,7 +136,3 @@ extra:
 # Packaged: 2018-03-28 12:29:10 UTC; murdoch
 # Repository: CRAN
 # Date/Publication: 2018-03-28 14:53:30 UTC
-
-# See
-# http://docs.continuum.io/conda/build.html for
-# more information about meta.yaml
