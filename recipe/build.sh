@@ -17,6 +17,9 @@ if [[ ${HOST} =~ .*darwin.* ]]; then
   fi
   X11_CONFIGURE_ARGS="--x-includes=${CONDA_BUILD_SYSROOT}/opt/X11/include --x-libraries=${CONDA_BUILD_SYSROOT}/opt/X11/lib"
   export DYLD_FALLBACK_LIBRARY_PATH=${CONDA_BUILD_SYSROOT}/opt/X11/lib
+elif [[ ${HOST} =~ .*linux.* ]]; then
+  X11_CONFIGURE_ARGS="--x-includes=${PREFIX}/include --x-libraries=${BUILD_PREFIX}/x86_64-conda_cos6-linux-gnu/sysroot/usr/lib64"
+  export LD_LIBRARY_PATH=${BUILD_PREFIX}/x86_64-conda_cos6-linux-gnu/sysroot/usr/lib64
 fi
 
 DISPLAY=${DISPLAY:-:0} \
