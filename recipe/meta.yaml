@@ -1,4 +1,4 @@
-{% set version = "0.100.24" %}
+{% set version = '0.100.30' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +10,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rgl_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rgl/rgl_{{ version }}.tar.gz
-  sha256: 1233a7bdc5a2b908fc64d5f56e92a0e123e8f7c0b9bac93dfd005608b78fa35a
+  sha256: 8575f51160b43057e5992f0d38480309fae3b8cca50b933d814a38cea6fef867
 
 build:
   merge_build_host: True  # [win]
   skip: True  # [osx]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -27,10 +27,10 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
-    - {{ compiler('cxx') }}      # [not win]
-    - {{ compiler('m2w64_c') }}     # [win]
-    - {{ compiler('m2w64_cxx') }}   # [win]
+    - {{ compiler('c') }}              # [not win]
+    - {{ compiler('m2w64_c') }}        # [win]
+    - {{ compiler('cxx') }}            # [not win]
+    - {{ compiler('m2w64_cxx') }}      # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}sed               # [win]
     - {{posix}}grep              # [win]
@@ -100,14 +100,15 @@ test:
 
 about:
   home: https://r-forge.r-project.org/projects/rgl/
-  license: GPL
+  license: GPL-3
   summary: Provides medium to high level functions for 3D interactive graphics, including functions
     modelled on base graphics (plot3d(), etc.) as well as functions for constructing
     representations of geometric objects (cube3d(), etc.).  Output may be on screen
     using OpenGL, or to various standard 3D file formats including WebGL, PLY, OBJ,
     STL as well as 2D image formats, including PNG, Postscript, SVG, PGF.
-  license_family: GPL
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_family: GPL3
+  license_file:
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
 extra:
   recipe-maintainers:
@@ -115,7 +116,7 @@ extra:
     - mingwandroid
 
 # Package: rgl
-# Version: 0.100.19
+# Version: 0.100.30
 # Title: 3D Visualization Using OpenGL
 # Author: Daniel Adler <dadler@uni-goettingen.de>, Duncan Murdoch <murdoch@stats.uwo.ca>, and others (see README)
 # Maintainer: Duncan Murdoch <murdoch@stats.uwo.ca>
@@ -129,6 +130,6 @@ extra:
 # BugReports: https://r-forge.r-project.org/projects/rgl/
 # VignetteBuilder: knitr
 # NeedsCompilation: yes
-# Packaged: 2019-03-12 15:58:50 UTC; murdoch
+# Packaged: 2019-08-18 19:53:12 UTC; murdoch
 # Repository: CRAN
-# Date/Publication: 2019-03-12 17:50:03 UTC
+# Date/Publication: 2019-08-19 18:50:12 UTC
