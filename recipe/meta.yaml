@@ -15,7 +15,7 @@ source:
 build:
   merge_build_host: true  # [win]
   skip: true  # [osx]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -31,16 +31,16 @@ requirements:
     - {{ compiler('m2w64_c') }}        # [win]
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
-    - {{posix}}filesystem        # [win]
-    - {{posix}}sed               # [win]
-    - {{posix}}grep              # [win]
-    - {{posix}}autoconf
-    - {{posix}}automake          # [not win]
-    - {{posix}}automake-wrapper  # [win]
-    - {{posix}}pkg-config
-    - {{posix}}make
-    - {{posix}}coreutils         # [win]
-    - {{posix}}zip               # [win]
+    - {{ posix }}filesystem        # [win]
+    - {{ posix }}sed               # [win]
+    - {{ posix }}grep              # [win]
+    - {{ posix }}autoconf
+    - {{ posix }}automake          # [not win]
+    - {{ posix }}automake-wrapper  # [win]
+    - {{ posix }}pkg-config
+    - {{ posix }}make
+    - {{ posix }}coreutils         # [win]
+    - {{ posix }}zip               # [win]
     - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
     - {{ cdt('mesa-libgl-devel') }}      # [linux]
     - {{ cdt('libx11-devel') }}          # [linux]
@@ -77,10 +77,10 @@ requirements:
     - freetype                           # [osx]
     - libglu                             # [linux]
     - libpng                             # [not win]
-    - {{native}}libpng                   # [win]
+    - {{ native }}libpng                   # [win]
   run:
     - r-base
-    - {{native}}gcc-libs         # [win]
+    - {{ native }}gcc-libs         # [win]
     - r-crosstalk
     - r-htmltools
     - r-htmlwidgets
@@ -91,7 +91,7 @@ requirements:
     - r-shiny
     - expat                              # [linux]
     - libglu                             # [linux]
-    - {{native}}libpng                   # [win]
+    - {{ native }}libpng                   # [win]
 
 test:
   commands:
