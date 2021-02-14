@@ -1,4 +1,4 @@
-{% set version = "0.100.54" %}
+{% set version = "0.105.12" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +10,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rgl_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rgl/rgl_{{ version }}.tar.gz
-  sha256: 17b7f8f135f526aba17dc516952f692daa7a7d6e787157fdff8dd5175113fad5
+  sha256: 6da9fcaaec4a621a2489776468e1ce43d4db8290bfb035a1b99911e43c0b235f
 
 build:
   merge_build_host: true  # [win]
   skip: true  # [osx]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -101,8 +101,7 @@ test:
 about:
   home: https://r-forge.r-project.org/projects/rgl/
   license: GPL-3
-  summary: Provides medium to high level functions for 3D interactive graphics, including functions modelled on base graphics (plot3d(), etc.) as well as functions
-    for constructing representations of geometric objects (cube3d(), etc.).  Output may be on screen using OpenGL, or to various standard 3D file formats including
+  summary: Provides medium to high level functions for 3D interactive graphics, including functions modelled on base graphics (plot3d(), etc.) as well as functions for constructing representations of geometric objects (cube3d(), etc.).  Output may be on screen using OpenGL, or to various standard 3D file formats including
     WebGL, PLY, OBJ, STL as well as 2D image formats, including PNG, Postscript, SVG, PGF.
   license_family: GPL3
   license_file:
