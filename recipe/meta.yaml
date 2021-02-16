@@ -71,7 +71,7 @@ requirements:
     - r-manipulatewidget >=0.9.0
     - r-shiny
     - expat                              # [linux]
-    - freetype                           # [osx]
+    - freetype                           # [not win]
     - libglu                             # [linux]
     - libpng                             # [not win]
     - {{ native }}libpng                   # [win]
