@@ -14,16 +14,12 @@ source:
 
 build:
   merge_build_host: true  # [win]
-  skip: true  # [osx]
   number: 0
   rpaths:
     - lib/R/lib/
     - lib/
   script_env:
     - DISPLAY
-  missing_dso_whitelist:   # [osx]
-    - /opt/X11/lib/libGL.1.dylib   # [osx]
-    - /opt/X11/lib/libX11.6.dylib  # [osx]
 
 requirements:
   build:
