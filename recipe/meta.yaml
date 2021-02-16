@@ -58,10 +58,12 @@ requirements:
     - {{ cdt('libxscrnsaver-devel') }}   # [linux]
     - {{ cdt('libxtst-devel') }}         # [linux]
     - {{ cdt('libselinux-devel') }}      # [linux]
+    - {{ cdt('libselinux') }}            # [linux]
     - {{ cdt('libxdamage') }}            # [linux]
     - {{ cdt('libxfixes') }}             # [linux]
     - {{ cdt('libxxf86vm') }}            # [linux]
     - {{ cdt('libxcb') }}                # [linux]
+    - {{ cdt('libxext') }}               # [linux]
     - {{ cdt('expat') }}                 # [linux]
   host:
     - r-base
@@ -78,6 +80,7 @@ requirements:
     - libglu                             # [linux]
     - libpng                             # [not win]
     - {{ native }}libpng                   # [win]
+    - xorg-libxfixes  # [linux]
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
