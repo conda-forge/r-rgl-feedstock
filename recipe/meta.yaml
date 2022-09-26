@@ -1,4 +1,4 @@
-{% set version = "0.109.6" %}
+{% set version = "0.110.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rgl_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rgl/rgl_{{ version }}.tar.gz
-  sha256: 3f43446334b9470c48233afbe8748c6fc9a54e477d1ebb07262d4cfec44e88ca
+  sha256: da1118c1990ae161a5787960fb22009601d2ee7d39ca9c97c31c70589bce346d
 
 build:
   merge_build_host: true  # [win]
