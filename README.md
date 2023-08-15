@@ -3,6 +3,7 @@ About r-rgl-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rgl-feedstock/blob/main/LICENSE.txt)
 
+
 About r-rgl
 -----------
 
@@ -11,6 +12,7 @@ Home: https://r-forge.r-project.org/projects/rgl/
 Package license: GPL-2.0-or-later
 
 Summary: Provides medium to high level functions for 3D interactive graphics, including functions modelled on base graphics (plot3d(), etc.) as well as functions for constructing representations of geometric objects (cube3d(), etc.).  Output may be on screen using OpenGL, or to various standard 3D file formats including WebGL, PLY, OBJ, STL as well as 2D image formats, including PNG, Postscript, SVG, PGF.
+
 About r-rgl
 -----------
 
