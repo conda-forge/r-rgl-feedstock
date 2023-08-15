@@ -14,6 +14,9 @@ source:
 
 build:
   merge_build_host: true  # [win]
+  {% if r_base == "4.3" %}
+  skip: True              # [ppc64le]
+  {% endif %}
   number: 0
   rpaths:
     - lib/R/lib/
