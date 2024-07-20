@@ -20,23 +20,23 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}              # [not win]
-    - {{ stdlib("c") }}                # [not win]
-    - {{ compiler('m2w64_c') }}        # [win]
-    - {{ stdlib("m2w64_c") }}          # [win]
-    - {{ compiler('cxx') }}            # [not win]
-    - {{ compiler('m2w64_cxx') }}      # [win]
-    - {{ posix }}filesystem        # [win]
-    - {{ posix }}sed               # [win]
-    - {{ posix }}grep              # [win]
+    - {{ compiler('c') }}                # [not win]
+    - {{ stdlib("c") }}                  # [not win]
+    - {{ compiler('m2w64_c') }}          # [win]
+    - {{ stdlib("m2w64_c") }}            # [win]
+    - {{ compiler('cxx') }}              # [not win]
+    - {{ compiler('m2w64_cxx') }}        # [win]
+    - {{ posix }}filesystem              # [win]
+    - {{ posix }}sed                     # [win]
+    - {{ posix }}grep                    # [win]
     - {{ posix }}autoconf
-    - {{ posix }}automake          # [not win]
-    - {{ posix }}automake-wrapper  # [win]
-    - {{ posix }}pkg-config
+    - {{ posix }}automake                # [not win]
+    - {{ posix }}automake-wrapper        # [win]
+    - pkg-config
     - {{ posix }}make
-    - {{ posix }}coreutils         # [win]
-    - {{ posix }}zip               # [win]
-    - cross-r-base {{ r_base }}    # [build_platform != target_platform]    
+    - {{ posix }}coreutils               # [win]
+    - {{ posix }}zip                     # [win]
+    - cross-r-base {{ r_base }}          # [build_platform != target_platform]    
     - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
     - {{ cdt('mesa-libgl-devel') }}      # [linux]
     - {{ cdt('libx11-devel') }}          # [linux]
@@ -69,10 +69,9 @@ requirements:
     - r-knitr >=1.33
     - r-magrittr
     - expat                              # [linux]
-    - freetype                           # [not win]
+    - freetype
     - libglu                             # [linux]
-    - libpng                             # [not win]
-    - libpng                 # [win]
+    - libpng
     - xorg-libxfixes                     # [linux]
   run:
     - r-base
@@ -83,11 +82,10 @@ requirements:
     - r-magrittr
     - expat                              # [linux]
     - libglu                             # [linux]
-    - libpng                 # [win]
 
 test:
   commands:
-    - $R -e "library('rgl')"  # [not win]
+    - $R -e "library('rgl')"           # [not win]
     - "\"%R%\" -e \"library('rgl')\""  # [win]
 
 about:
@@ -103,4 +101,3 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - mingwandroid
