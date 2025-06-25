@@ -1,4 +1,4 @@
-{% set version = "1.3.14" %}
+{% set version = "1.3.24" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rgl_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rgl/rgl_{{ version }}.tar.gz
-  sha256: 9a44f7e0ba5c201a7df3168d2b493eb3344f84faaac807c704f52e6196d9c395
+  sha256: 9f580a97c56eaf28344da83a2309e35cd665fa77ba07a324d9c4789bdc03ee49
 
 build:
   skip: true  # [ppc64le]
