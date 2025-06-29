@@ -1,0 +1,25 @@
+From 67c6dace730396dbd2a60f5a59e7f9c0c16d193b Mon Sep 17 00:00:00 2001
+From: Daniel Nachun <daniel.nachun@gmail.com>
+Date: Sun, 29 Jun 2025 15:07:11 -0700
+Subject: [PATCH] remove unneeded LDFLAGS
+
+---
+ src/Makevars.win.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/Makevars.win.in b/src/Makevars.win.in
+index 969f65ff..5ea0af8d 100644
+--- a/src/Makevars.win.in
++++ b/src/Makevars.win.in
+@@ -7,7 +7,7 @@ PKG_CPPFLAGS = \
+ 	-DRGL_W32
+ 
+ PKG_LIBS = \
+-	-lfreetype -lharfbuzz -lfreetype -lpng -lbz2 -lz -lgdi32 -lopengl32 -lglu32
++	-lfreetype -lfreetype -lpng -lbz2 -lgdi32 -lopengl32 -lglu32
+ 	
+ # These definitions are for older R versions:
+ 
+-- 
+2.49.0
+
