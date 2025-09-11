@@ -80,6 +80,7 @@ requirements:
     - libglu                             # [linux]
     - libpng
     - xorg-libxfixes                     # [linux]
+    - zlib                               # [win]
   run:
     - r-base
     - r-htmltools
