@@ -15,7 +15,7 @@ source:
 
 build:
   skip: true  # [ppc64le]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -80,6 +80,7 @@ requirements:
     - libglu                             # [linux]
     - libpng
     - xorg-libxfixes                     # [linux]
+    - zlib                               # [win]
   run:
     - r-base
     - r-htmltools
