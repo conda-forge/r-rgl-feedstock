@@ -1,4 +1,4 @@
-{% set version = "1.3.24" %}
+{% set version = "1.3.31" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,13 +9,13 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rgl_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rgl/rgl_{{ version }}.tar.gz
-  sha256: 9f580a97c56eaf28344da83a2309e35cd665fa77ba07a324d9c4789bdc03ee49
+  sha256: 76f534358751390845ce1c89c6007cc146f95de5560fd7baaea2406fd95fc0d4
   patches:
     - 0001-remove-unneeded-LDFLAGS.patch
 
 build:
   skip: true  # [ppc64le]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
