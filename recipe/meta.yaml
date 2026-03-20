@@ -15,7 +15,7 @@ source:
 
 build:
   skip: true  # [ppc64le]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -44,30 +44,6 @@ requirements:
     - {{ posix }}make
     - {{ posix }}coreutils               # [win]
     - {{ posix }}zip                     # [win]
-    - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
-    - {{ cdt('mesa-libgl-devel') }}      # [linux]
-    - {{ cdt('libx11-devel') }}          # [linux]
-    - {{ cdt('libxext-devel') }}         # [linux]
-    - {{ cdt('libxrender-devel') }}      # [linux]
-    - {{ cdt('mesa-libgl-devel') }}      # [linux]
-    - {{ cdt('mesa-libegl-devel') }}     # [linux]
-    - {{ cdt('mesa-dri-drivers') }}      # [linux]
-    - {{ cdt('libxau-devel') }}          # [linux]
-    - {{ cdt('libdrm-devel') }}          # [linux]
-    - {{ cdt('libxcomposite-devel') }}   # [linux]
-    - {{ cdt('libxcursor-devel') }}      # [linux]
-    - {{ cdt('libxi-devel') }}           # [linux]
-    - {{ cdt('libxrandr-devel') }}       # [linux]
-    - {{ cdt('libxscrnsaver-devel') }}   # [linux]
-    - {{ cdt('libxtst-devel') }}         # [linux]
-    - {{ cdt('libselinux-devel') }}      # [linux]
-    - {{ cdt('libselinux') }}            # [linux]
-    - {{ cdt('libxdamage') }}            # [linux]
-    - {{ cdt('libxfixes') }}             # [linux]
-    - {{ cdt('libxxf86vm') }}            # [linux]
-    - {{ cdt('libxcb') }}                # [linux]
-    - {{ cdt('libxext') }}               # [linux]
-    - {{ cdt('expat') }}                 # [linux]
   host:
     - r-base
     - r-htmltools
@@ -81,6 +57,20 @@ requirements:
     - libpng
     - xorg-libxfixes                     # [linux]
     - zlib                               # [win]
+    - xorg-xorgproto                     # [linux]
+    - libgl-devel                        # [linux]
+    - xorg-libx11                        # [linux]
+    - xorg-libxext                       # [linux]
+    - xorg-libxrender                    # [linux]
+    - libegl-devel                       # [linux]
+    - xorg-libxau                        # [linux]
+    - libdrm                             # [linux]
+    - xorg-libxcomposite                 # [linux]
+    - xorg-libxcursor                    # [linux]
+    - xorg-libxi                         # [linux]
+    - xorg-libxrandr                     # [linux]
+    - xorg-libxscrnsaver                 # [linux]
+    - xorg-libxtst                       # [linux]
   run:
     - r-base
     - r-htmltools
